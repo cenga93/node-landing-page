@@ -18,7 +18,7 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 // load routes
 app.get('/', (req, res) => {
-  res.send('<h1>radi</h1>');
+  res.send('<h1>working..</h1>');
 });
 
 // start server
