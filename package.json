@@ -1,0 +1,29 @@
+{
+  "name": "landing-page",
+  "version": "1.0.0",
+  "description": "Complete Responsive Dynamic Website using HTML, NodeJS, ExpressJS, MongoDB &amp; Mongoose",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon app.js -e js,ejs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cenga93/node-landing-page.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cenga93/node-landing-page/issues"
+  },
+  "homepage": "https://github.com/cenga93/node-landing-page#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "mongoose": "^5.12.0"
+  },
+  "devDependencies": {
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.7"
+  }
+}
