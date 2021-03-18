@@ -1,12 +1,20 @@
 const express = require('express');
-const dotenv = require('dotenv').config();
+const dotenv = require('dotenv');
 const path = require('path');
 const morgan = require('morgan');
 const connection = require('./src/database/connection');
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3000;
 
-// init db onnection
+// path
+const public_dir = path.join(__dirname, 'public');
+const src_dir = path.join(__dirname, 'src');
+const views_dir = path.join(src_dir, 'views');
+
+// dotenv init
+dotenv.config();
+
+// init database connection
 connection();
 
 // app config
@@ -14,11 +22,16 @@ app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
+// set template engine
+app.set('view engine', 'ejs');
+app.set('views', views_dir);
+
 // static files
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(public_dir));
+
 // load routes
 app.get('/', (req, res) => {
-  res.send('<h1>working..</h1>');
+  res.render('index');
 });
 
 // start server

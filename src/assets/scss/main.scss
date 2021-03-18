@@ -1,0 +1,17 @@
+// HELPERS
+@import './helpers/variables';
+@import './helpers/mixins';
+
+// BASIC
+@import './basics/container';
+
+// LAYOUT
+@import './layout/header';
+@import './layout/footer';
+
+// PAGES
+@import './pages/home';
+
+body {
+  background-color: rgb(18, 17, 97);
+}
