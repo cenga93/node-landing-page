@@ -8,11 +8,11 @@ files:
     - 'scss/sprite/*.scss'
 rules:
   # Extends
-  extends-before-mixins: 1 # @extend pre @include je dozvoljen
-  extends-before-declarations: 2 # @extend pre scss-a
+  extends-before-mixins: 1
+  extends-before-declarations: 2
 
   # Mixins
-  mixins-before-declarations: # mixin pre bilo kod scss-a u bloku
+  mixins-before-declarations:
     - 2
     - exclude:
         - media-query
@@ -23,28 +23,28 @@ rules:
     - max-depth: 2
 
   # Line Spacing
-  one-declaration-per-line: 1 # novi red za svaki property u scss-u
-  empty-line-between-blocks: 2 # prazan red izmedju blokova
-  single-line-per-selector: 1 # vise selektovanih => svaki u novom redu
+  one-declaration-per-line: 1
+  empty-line-between-blocks: 2
+  single-line-per-selector: 1
 
   # Disallows
-  no-color-keywords: 2 # nije dozvoljeno (red,blue,orange), samo hexadecimal
+  no-color-keywords: 2
   no-color-literals:
     - 1
-    - allow-rgba: true # rgba je dozvoljen
-  no-css-comments: 1 # css komentar nije dozvoljen => /* ... */
-  no-duplicate-properties: 2 # dupliranje property-a nije dozvoljeno
-  no-empty-rulesets: 1 # prazan blok nije dozvoljen
-  no-extends: 0 # extend je dozvoljen
-  no-ids: 2 # ID selektor nije dozvoljen
-  no-important: 0 # !important je dozvoljen
-  no-invalid-hex: 2 # hex zapis mora biti 3 ili 6 karaktera
-  no-mergeable-selectors: 2 # ponavljanje selektovanog bloka nije dozvoljeno
-  no-misspelled-properties: 2 # greske u kucanju property-a
+    - allow-rgba: true
+  no-css-comments: 1
+  no-duplicate-properties: 2
+  no-empty-rulesets: 1
+  no-extends: 0
+  no-ids: 2
+  no-important: 0
+  no-invalid-hex: 2
+  no-mergeable-selectors: 2
+  no-misspelled-properties: 2
   no-qualifying-elements:
     - 1
-    - allow-element-with-attribute: true # dozvoljeno input[type="email"] selektor
-  no-trailing-zero: 1 # nije dozvoljeno (width: 10.500rem)
+    - allow-element-with-attribute: true
+  no-trailing-zero: 1
 
   # Nesting
   force-attribute-nesting: 1
@@ -52,13 +52,13 @@ rules:
   force-pseudo-nesting: 1
 
   # Indentation
-  indentation: # koliko je child uvucen (tab) od parent selektora
+  indentation: #
     - 2
     - size: 2
 
   # Name Formats
-  function-name-format: 2 # ime funkcije malim slovima
-  mixin-name-format: # ime mixin-a malim slovima i dozvoljeno ime width-height. nije width_height
+  function-name-format: 2
+  mixin-name-format:
     - 2
   placeholder-name-format: 1
   variable-name-format:
@@ -71,36 +71,36 @@ rules:
         - moz
 
   # Style Guide
-  border-zero: # border:none - nije dozvoljen => border:0 - dozvoljen
+  border-zero:
     - 1
     - convention: zero
-  brace-style: # {} su u istom redu. Nije novi red
+  brace-style:
     - 1
     - allow-single-line: true
-  clean-import-paths: 2 # kod @import nije potreban underscore pre imena (mixin-a, variable)
-  empty-args: 1 # u koliko nema argumenata nije potrebno ()
-  hex-length: 2 # umesto #ffffff treba #fff
-  hex-notation: 2 # dozvoljeno je #fff, nije #FFF
-  leading-zero: # dozvoljeno 0.5px nije .5px
+  clean-import-paths: 2
+  empty-args: 1
+  hex-length: 2
+  hex-notation: 2
+  leading-zero:
     - 1
     - include: true
   nesting-depth:
     - 2
-    - max-depth: 2 # maximalna dubina nestovanja
+    - max-depth: 2
   property-sort-order:
     - 1
-    - order: alphabetical # redosled property-a (alphabetical,concentric,recess,smacss)
+    - order: alphabetical
   quotes:
     - 1
-    - style: single # single navodnici
+    - style: single
   zero-unit:
     - 1
-    - include: false # nije dozvoljeno margin:0px, dozvoljeno je margin:0
+    - include: false
 
   # Inner Spacing
   space-after-comma:
     - 1
-    - include: true # dozovljeno rgb(220, 220, 220), nije dozvoljeno rgb(220 220 220)
+    - include: true
   space-before-colon: 1
   space-after-colon: 1
   space-before-brace: 1
