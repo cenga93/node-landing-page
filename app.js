@@ -1,5 +1,6 @@
 const express = require('express');
 const dotenv = require('dotenv');
+const expressLayouts = require('express-ejs-layouts');
 const path = require('path');
 const morgan = require('morgan');
 const connection = require('./src/database/connection');
@@ -14,28 +15,36 @@ const __views = path.join(__src, 'views');
 // dotenv init
 dotenv.config();
 
-// init database connection
-connection();
+// init database connection ****** DISABLED for now
+// connection();
 
 // app config
 app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+app.use(expressLayouts);
 
 // set template engine
 app.set('view engine', 'ejs');
 app.set('views', __views);
+app.set('layout', 'layout/default');
 
-// middleware
-app.use('/css', express.static(path.join(__dirname, '/node_modules/bootstrap/dist/css')));
+// static files
+app.use('/bootstrap/css', express.static(path.join(__dirname, '/node_modules/bootstrap/dist/css')));
+app.use('/bootstrap/js', express.static(path.join(__dirname, '/node_modules/bootstrap/dist/js')));
 app.use('/jq', express.static(path.join(__dirname, '/node_modules/jquery/dist')));
-app.use('/js', express.static(path.join(__dirname, '/node_modules/bootstrap/dist/js')));
-
 app.use(express.static(path.join(__public, '/css')));
 app.use(express.static(path.join(__public, '/js')));
+app.use(express.static(path.join(__public, '/img')));
+app.use('/fonts', express.static(path.join(__public, '/www/fonts')));
+
 // load routes
 app.get('/', (req, res) => {
-  res.render('index');
+  res.render('pages/home');
+});
+
+app.get('/contact', (req, res) => {
+  res.render('pages/contact');
 });
 
 // start server

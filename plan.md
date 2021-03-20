@@ -13,3 +13,9 @@
 3. Config static folders/files :heavy_check_mark:<br>
 
 4. Integrate bootstra 5 and jquery :heavy_check_mark:<br>
+   s
+5. Add fonts <br>
+
+   - create \_fonts.scss :heavy_check_mark:<br>
+   - path config in app.js :heavy_check_mark:<br>
+   - sass lint fix
