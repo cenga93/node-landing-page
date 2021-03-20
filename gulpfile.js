@@ -1,14 +1,14 @@
-const { src, dest, series, watch } = require('gulp');
-const sourcemaps = require('gulp-sourcemaps');
-const plumber = require('gulp-plumber');
-const sass = require('gulp-sass');
-const sassLint = require('gulp-sass-lint');
-const rename = require('gulp-rename');
-const browserSync = require('browser-sync').create();
-const babel = require('gulp-babel');
-const uglify = require('gulp-uglify');
-const nodemon = require('gulp-nodemon');
-const del = require('del');
+const { src, dest, series, watch } = require('gulp'),
+  sourcemaps  = require('gulp-sourcemaps'),
+  plumber     = require('gulp-plumber'),
+  sass        = require('gulp-sass'),
+  sassLint    = require('gulp-sass-lint'),
+  rename      = require('gulp-rename'),
+  browserSync = require('browser-sync').create(),
+  babel       = require('gulp-babel'),
+  uglify      = require('gulp-uglify'),
+  nodemon     = require('gulp-nodemon'),
+  del         = require('del');
 
 const paths = {
   style: {
@@ -21,6 +21,7 @@ const paths = {
     dest: 'public/js',
     watchFiles: 'src/assets/js/**/*.js',
   },
+  sassLint: '.sass-lint.yml',
 };
 
 const Style = () => {
@@ -30,7 +31,7 @@ const Style = () => {
     .pipe(
       sassLint({
         options: {
-          configFile: '.sass-lint.yml',
+          configFile: paths.sassLint,
         },
       })
     )
@@ -56,7 +57,9 @@ const Script = () => {
       })
     )
     .pipe(uglify())
-    .pipe(dest(paths.js.dest, { sourcemaps: '.' }))
+
+    .pipe(sourcemaps.write('./'))
+    .pipe(dest(paths.js.dest))
     .pipe(browserSync.stream());
 };
 
@@ -64,7 +67,7 @@ const Clean = () => {
   return del(['public/css', 'public/js'], { force: true });
 };
 
-const develop = (cb) => {
+const develop = () => {
   return nodemon({
     script: 'app.js',
     watch: ['app.js', 'src/**/*'],

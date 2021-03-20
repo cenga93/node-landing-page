@@ -7,9 +7,9 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // path
-const public_dir = path.join(__dirname, 'public');
-const src_dir = path.join(__dirname, 'src');
-const views_dir = path.join(src_dir, 'views');
+const __public = path.join(__dirname, 'public');
+const __src = path.join(__dirname, 'src');
+const __views = path.join(__src, 'views');
 
 // dotenv init
 dotenv.config();
@@ -24,11 +24,15 @@ app.use(express.json());
 
 // set template engine
 app.set('view engine', 'ejs');
-app.set('views', views_dir);
+app.set('views', __views);
 
-// static files
-app.use(express.static(public_dir));
+// middleware
+app.use('/css', express.static(path.join(__dirname, '/node_modules/bootstrap/dist/css')));
+app.use('/jq', express.static(path.join(__dirname, '/node_modules/jquery/dist')));
+app.use('/js', express.static(path.join(__dirname, '/node_modules/bootstrap/dist/js')));
 
+app.use(express.static(path.join(__public, '/css')));
+app.use(express.static(path.join(__public, '/js')));
 // load routes
 app.get('/', (req, res) => {
   res.render('index');
