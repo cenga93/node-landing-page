@@ -1,3 +1,8 @@
-nav {
+.navbar {
+  background-color: $light-gray;
   font-weight: 300;
+
+  &__logo {
+    color: $red !important;
+  }
 }

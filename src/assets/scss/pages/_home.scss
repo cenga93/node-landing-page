@@ -1,0 +1,89 @@
+.hero {
+  &__left {
+    @include display-style(flex, center, flex-start);
+    flex-direction: column;
+
+    // mobile mq
+    @include media-query(mobile) {
+      align-items: center;
+      text-align: center;
+    }
+
+    // mobile mq
+    @include media-query(tablet) {
+      align-items: center;
+      text-align: center;
+    }
+  }
+
+  &__title,
+  &__subtitle,
+  &__para {
+    font-weight: 300;
+  }
+
+  &__title,
+  &__subtitle {
+    text-transform: uppercase;
+  }
+
+  &__title {
+    font-size: 45px;
+
+    @include media-query(mobile) {
+      font-size: 25px;
+    }
+
+    @include media-query(tablet) {
+      font-size: 35px;
+    }
+
+    @include media-query(ltablet) {
+      font-size: 30px;
+    }
+
+    @include media-query(laptop) {
+      font-size: 40px;
+    }
+  }
+
+  &__subtitle {
+    color: $purple;
+    font-size: 30px;
+
+    @include media-query(mobile) {
+      font-size: 30px;
+    }
+
+    @include media-query(tablet) {
+      font-size: 25px;
+    }
+
+    @include media-query(ltablet) {
+      font-size: 25px;
+    }
+  }
+
+  &__para {
+    font-size: 16px;
+    margin-bottom: 2rem;
+    text-transform: capitalize;
+
+    span {
+      font-weight: bold;
+    }
+  }
+
+  &__button {
+    background-color: $red;
+    border: none;
+    border-radius: 0;
+    color: $white-dark;
+    padding: 0.5rem 1.5rem;
+    text-transform: uppercase;
+
+    &:hover {
+      color: $white;
+    }
+  }
+}

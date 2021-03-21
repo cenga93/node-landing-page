@@ -2,7 +2,6 @@
 <!-- :heavy_check_mark: -->
 
 1. Create directory structure :heavy_check_mark:
-
 2. Gulp.js configuration <br>
 
    - set src and dest folder :heavy_check_mark:<br>
@@ -11,11 +10,12 @@
    - 100% automatization :heavy_check_mark:<br>
 
 3. Config static folders/files :heavy_check_mark:<br>
-
 4. Integrate bootstra 5 and jquery :heavy_check_mark:<br>
-   s
 5. Add fonts <br>
 
    - create \_fonts.scss :heavy_check_mark:<br>
    - path config in app.js :heavy_check_mark:<br>
-   - sass lint fix
+   - sass lint fix :heavy_check_mark:<br>
+
+6. Styling nav and hero section :heavy_check_mark:<br>
+7. Responsive hero section :heavy_check_mark:<br>
