@@ -10,7 +10,7 @@
    - 100% automatization :heavy_check_mark:<br>
 
 3. Config static folders/files :heavy_check_mark:<br>
-4. Integrate bootstra 5 and jquery :heavy_check_mark:<br>
+4. Integrate bootstrap 5 and jquery :heavy_check_mark:<br>
 5. Add fonts <br>
 
    - create \_fonts.scss :heavy_check_mark:<br>
@@ -19,3 +19,4 @@
 
 6. Styling nav and hero section :heavy_check_mark:<br>
 7. Responsive hero section :heavy_check_mark:<br>
+8. Add SVG to FONT SVG converter task

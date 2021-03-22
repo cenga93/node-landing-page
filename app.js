@@ -30,13 +30,14 @@ app.set('views', __views);
 app.set('layout', 'layout/default');
 
 // static files
-app.use('/bootstrap/css', express.static(path.join(__dirname, '/node_modules/bootstrap/dist/css')));
-app.use('/bootstrap/js', express.static(path.join(__dirname, '/node_modules/bootstrap/dist/js')));
-app.use('/jq', express.static(path.join(__dirname, '/node_modules/jquery/dist')));
 app.use(express.static(path.join(__public, '/css')));
 app.use(express.static(path.join(__public, '/js')));
 app.use(express.static(path.join(__public, '/img')));
+app.use('/bootstrap/css', express.static(path.join(__dirname, '/node_modules/bootstrap/dist/css')));
+app.use('/bootstrap/js', express.static(path.join(__dirname, '/node_modules/bootstrap/dist/js')));
+app.use('/jq', express.static(path.join(__dirname, '/node_modules/jquery/dist')));
 app.use('/fonts', express.static(path.join(__public, '/www/fonts')));
+app.use('/svg', express.static(path.join(__public, '/www/svg')));
 
 // load routes
 app.get('/', (req, res) => {

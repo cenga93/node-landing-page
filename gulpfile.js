@@ -1,14 +1,16 @@
 const { src, dest, series, watch } = require('gulp'),
-  sourcemaps  = require('gulp-sourcemaps'),
-  plumber     = require('gulp-plumber'),
-  sass        = require('gulp-sass'),
-  sassLint    = require('gulp-sass-lint'),
-  rename      = require('gulp-rename'),
+  sourcemaps = require('gulp-sourcemaps'),
+  plumber = require('gulp-plumber'),
+  sass = require('gulp-sass'),
+  sassLint = require('gulp-sass-lint'),
+  rename = require('gulp-rename'),
   browserSync = require('browser-sync').create(),
-  babel       = require('gulp-babel'),
-  uglify      = require('gulp-uglify'),
-  nodemon     = require('gulp-nodemon'),
-  del         = require('del');
+  babel = require('gulp-babel'),
+  uglify = require('gulp-uglify'),
+  nodemon = require('gulp-nodemon'),
+  del = require('del'),
+  iconfont = require('gulp-iconfont'),
+  iconfontCss = require('gulp-iconfont-css');
 
 const paths = {
   style: {
@@ -20,6 +22,10 @@ const paths = {
     src: 'src/assets/js/main.js',
     dest: 'public/js',
     watchFiles: 'src/assets/js/**/*.js',
+  },
+  icons: {
+    src: 'public/img/svg/*.svg',
+    dest: 'public/www/svg',
   },
   sassLint: '.sass-lint.yml',
 };
@@ -63,6 +69,30 @@ const Script = () => {
     .pipe(browserSync.stream());
 };
 
+// ICON FONT -> CONVERT SVG ICONS TO FONT SVG ICONS
+const SvgFont = () => {
+  return src(paths.icons.src)
+    .pipe(
+      iconfontCss({
+        fontName: 'svgicons',
+        cssClass: 'icon',
+        path: 'src/assets/config/icon-font.scss',
+        targetPath: '../../../src/assets/scss/fonts/_icon-font.scss',
+        fontPath: 'svg/',
+      })
+    )
+    .pipe(
+      iconfont({
+        fontName: 'svgicons',
+        prependUnicode: false,
+        formats: ['ttf', 'woff'],
+        normalize: true,
+        centerHorizontally: true,
+      })
+    )
+    .pipe(dest(paths.icons.dest));
+};
+
 const Clean = () => {
   return del(['public/css', 'public/js'], { force: true });
 };
@@ -84,6 +114,6 @@ const Watching = (cb) => {
   develop(cb);
 };
 
-const build = series(Clean, Style, Script, Watching);
+const build = series(Clean, SvgFont, Style, Script, Watching);
 
 exports.default = build;
