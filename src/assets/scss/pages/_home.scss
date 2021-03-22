@@ -12,6 +12,7 @@
 
     @include media-query(tablet) {
       align-items: center;
+      text-align: center;
     }
   }
 
@@ -43,6 +44,19 @@
 
     @include media-query(laptop) {
       font-size: 40px;
+    }
+
+    &--about {
+      @include media-query(mobile) {
+        font-size: 20px;
+      }
+
+      @include media-query(ltablet) {
+        font-size: 25px;
+      }
+      @include media-query(laptop) {
+        font-size: 30px;
+      }
     }
   }
 
@@ -77,4 +91,48 @@
     @include button;
   }
 }
+
+.hero {
+  background-color: $light-gray;
+  padding: 0.7rem;
+}
+
+.about {
+  padding: 0.7rem;
+
+  &__header {
+    color: $red;
+  }
+
+  &__subheader {
+    color: $gray;
+    font-weight: 300;
+  }
+
+  &__para {
+    text-align: justify;
+  }
+}
 // end::HERO, ABOUT SECTION
+
+// start::SERVICE SECTION
+.services {
+  background: $light-gray;
+  padding: 0.7rem;
+  &__box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 180px;
+    &__top {
+      width: 100px;
+
+      min-height: 120px;
+    }
+    &__bottom {
+      text-align: center;
+    }
+  }
+}
+// end::SERVICE SECTION

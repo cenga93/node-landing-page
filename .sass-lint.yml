@@ -5,6 +5,7 @@ options:
 files:
   ignore:
     - 'src/assets/scss/fonts/*.scss'
+    - 'src/assets/scss/config/*.scss'
 rules:
   # Extends
   extends-before-mixins: 1

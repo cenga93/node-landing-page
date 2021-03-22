@@ -1,56 +1,68 @@
 @font-face {
-    font-family: "svgicons";
-    src: url('svg/svgicons.eot');
-    src: url('svg/svgicons.eot?#iefix') format('eot'),
-        url('svg/svgicons.woff') format('woff'),
-        url('svg/svgicons.ttf') format('truetype');
+  font-family: "svgicons";
+  src: url('svg/svgicons.eot');
+  src: url('svg/svgicons.eot?#iefix') format('eot'),
+      url('svg/svgicons.woff') format('woff'),
+      url('svg/svgicons.ttf') format('truetype');
+}
+
+@mixin icon-styles {
+  font-family: "svgicons";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; 
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  // speak: none; // only necessary if not using the private unicode range (firstGlyph option)
+  text-decoration: none;
+  text-transform: none;
+}
+
+%icon {
+  @include icon-styles;
+}
+
+@function icon-char($filename) {
+  $char: "";
+
+  @if $filename == 1 {
+      $char: "\E001";
   }
-  
-  @mixin icon-styles {
-    font-family: "svgicons";
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale; 
-    font-style: normal;
-    font-variant: normal;
-    font-weight: normal;
-    // speak: none; // only necessary if not using the private unicode range (firstGlyph option)
-    text-decoration: none;
-    text-transform: none;
+  @if $filename == 2 {
+      $char: "\E002";
   }
-  
-  %icon {
-    @include icon-styles;
+  @if $filename == 3 {
+      $char: "\E003";
   }
-  
-  @function icon-char($filename) {
-    $char: "";
-  
-    @if $filename == about {
-        $char: "\E001";
-    }
-    @if $filename == growth {
-        $char: "\E002";
-    }
-  
-    @return $char;
-  } 
-  
-  @mixin icon($filename, $insert: before, $extend: true) {
-    &:#{$insert} {
-        @if $extend {
-            @extend %icon;
-        } @else {
-            @include icon-styles;
-        }
-        content: icon-char($filename);
-    }
+  @if $filename == 4 {
+      $char: "\E004";
   }
-  .icon-about {
-    @include icon(about);
+
+  @return $char;
+} 
+
+@mixin icon($filename, $insert: before, $extend: true) {
+  &:#{$insert} {
+      @if $extend {
+          @extend %icon;
+      } @else {
+          @include icon-styles;
+      }
+      content: icon-char($filename);
   }
-  
-  .icon-growth {
-    @include icon(growth);
-  }
-  
-  
+}
+.icon-1 {
+  @include icon(1);
+}
+
+.icon-2 {
+  @include icon(2);
+}
+
+.icon-3 {
+  @include icon(3);
+}
+
+.icon-4 {
+  @include icon(4);
+}

@@ -19,4 +19,5 @@
 
 6. Styling nav and hero section :heavy_check_mark:<br>
 7. Responsive hero section :heavy_check_mark:<br>
-8. Add SVG to FONT SVG converter task
+8. Add SVG to FONT SVG converter task :heavy_check_mark:<br>
+9. Styling about section :heavy_check_mark:<br>

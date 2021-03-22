@@ -38,6 +38,7 @@ app.use('/bootstrap/js', express.static(path.join(__dirname, '/node_modules/boot
 app.use('/jq', express.static(path.join(__dirname, '/node_modules/jquery/dist')));
 app.use('/fonts', express.static(path.join(__public, '/www/fonts')));
 app.use('/svg', express.static(path.join(__public, '/www/svg')));
+app.use('/img', express.static(path.join(__public, '/img')));
 
 // load routes
 app.get('/', (req, res) => {

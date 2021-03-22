@@ -85,7 +85,8 @@ const SvgFont = () => {
       iconfont({
         fontName: 'svgicons',
         prependUnicode: false,
-        formats: ['ttf', 'woff'],
+        formats: ['ttf', 'woff', 'eot'],
+        fontHeight: 1000,
         normalize: true,
         centerHorizontally: true,
       })
