@@ -1,5 +1,11 @@
 // start::HERO, ABOUT SECTION
 .hero,
+.about,
+.services {
+  padding: 0.7rem;
+}
+
+.hero,
 .about {
   &__content {
     @include display-style(flex, center, flex-start);
@@ -16,77 +22,6 @@
     }
   }
 
-  &__title,
-  &__subtitle,
-  &__para {
-    font-weight: 300;
-  }
-
-  &__title,
-  &__subtitle {
-    text-transform: uppercase;
-  }
-
-  &__title {
-    font-size: 45px;
-
-    @include media-query(mobile) {
-      font-size: 25px;
-    }
-
-    @include media-query(tablet) {
-      font-size: 35px;
-    }
-
-    @include media-query(ltablet) {
-      font-size: 30px;
-    }
-
-    @include media-query(laptop) {
-      font-size: 40px;
-    }
-
-    &--about {
-      @include media-query(mobile) {
-        font-size: 20px;
-      }
-
-      @include media-query(ltablet) {
-        font-size: 25px;
-      }
-      @include media-query(laptop) {
-        font-size: 30px;
-      }
-    }
-  }
-
-  &__subtitle {
-    color: $purple;
-    font-size: 30px;
-
-    @include media-query(mobile) {
-      font-size: 30px;
-    }
-
-    @include media-query(tablet) {
-      font-size: 25px;
-    }
-
-    @include media-query(ltablet) {
-      font-size: 25px;
-    }
-  }
-
-  &__para {
-    font-size: 16px;
-    margin-bottom: 2rem;
-    text-transform: capitalize;
-
-    span {
-      font-weight: bold;
-    }
-  }
-
   &__button {
     @include button;
   }
@@ -94,44 +29,31 @@
 
 .hero {
   background-color: $light-gray;
-  padding: 0.7rem;
 }
 
-.about {
-  padding: 0.7rem;
-
-  &__header {
-    color: $red;
-  }
-
-  &__subheader {
-    color: $gray;
-    font-weight: 300;
-  }
-
-  &__para {
-    text-align: justify;
-  }
-}
 // end::HERO, ABOUT SECTION
 
 // start::SERVICE SECTION
 .services {
   background: $light-gray;
-  padding: 0.7rem;
+
   &__box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include display-style(flex, center, center);
     flex-direction: column;
     width: 180px;
-    &__top {
-      width: 100px;
 
+    &__top {
       min-height: 120px;
+      width: 100px;
     }
+
     &__bottom {
       text-align: center;
+
+      p {
+        color: $gray;
+        font-weight: 300;
+      }
     }
   }
 }

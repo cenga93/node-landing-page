@@ -21,3 +21,5 @@
 7. Responsive hero section :heavy_check_mark:<br>
 8. Add SVG to FONT SVG converter task :heavy_check_mark:<br>
 9. Styling about section :heavy_check_mark:<br>
+10. multiselect **header, **subheader, **title, **subtitle :heavy_check_mark:<br>
+11. Include google map :heavy_check_mark:<br>

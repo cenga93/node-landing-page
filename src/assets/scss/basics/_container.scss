@@ -1,0 +1,78 @@
+.container {
+  &__header,
+  &__subheader,
+  &__title,
+  &__subtitle,
+  &__para {
+    font-weight: 300;
+  }
+
+  &__subheader,
+  &__title,
+  &__para {
+    color: $gray;
+  }
+
+  &__title,
+  &__subtitle {
+    text-transform: uppercase;
+  }
+
+  &__header {
+    color: $red;
+    margin: 0;
+  }
+
+  &__subheader {
+    font-size: 22px;
+  }
+
+  &__title {
+    font-size: 35px;
+
+    @include media-query(mobile) {
+      font-size: 25px;
+    }
+
+    @include media-query(tablet) {
+      font-size: 35px;
+    }
+
+    @include media-query(ltablet) {
+      font-size: 30px;
+    }
+
+    @include media-query(laptop) {
+      font-size: 40px;
+    }
+  }
+
+  &__subtitle {
+    color: $purple;
+    font-size: 25px;
+
+    @include media-query(mobile) {
+      font-size: 30px;
+    }
+
+    @include media-query(tablet) {
+      font-size: 25px;
+    }
+
+    @include media-query(ltablet) {
+      font-size: 25px;
+    }
+
+    &--services {
+      font-size: 20px;
+    }
+  }
+
+  &__para {
+    text-align: justify;
+
+    span {
+      font-weight: bold;
+    }
+  }
+}

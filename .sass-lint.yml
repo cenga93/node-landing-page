@@ -29,7 +29,7 @@ rules:
 
   class-name-format:
     - 1
-    - convention: strictbem
+    - convention: hyphenatedbem
 
   # Disallows
   no-color-keywords: 2
