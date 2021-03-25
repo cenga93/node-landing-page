@@ -22,4 +22,10 @@
 8. Add SVG to FONT SVG converter task :heavy_check_mark:<br>
 9. Styling about section :heavy_check_mark:<br>
 10. multiselect **header, **subheader, **title, **subtitle :heavy_check_mark:<br>
-11. Include google map :heavy_check_mark:<br>
+11. Include google map (map section) :heavy_check_mark:<br>
+12. Add contact section
+
+    - install validator.js :heavy_check_mark:<br>
+    - responsive form :heavy_check_mark:<br>
+
+13. Add footer :heavy_check_mark:<br>

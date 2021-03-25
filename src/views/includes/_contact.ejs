@@ -1,0 +1,46 @@
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="col-md-12">
+      <div class="row mb-4">
+        <div class="col-12">
+          <h2 class="text-center container__header">Contact us</h2>
+          <h3 class="text-center container__subheader">we will be happy to help you</h3>
+        </div>
+      </div>
+      <div class="row mb-4">
+        <div class="col-lg-7 col-md-9 col-sm-11 mx-auto">
+          <form class="row g-3" method="POST" action="/contact">
+            <!-- Firstname -->
+            <div class="col-md-6">
+              <label for="firstname" class="form-label">First name</label>
+              <input type="text" name="firstname" class="form-control" required id="firstname" placeholder="Enter first name" />
+            </div>
+
+            <!-- Lastname -->
+            <div class="col-md-6">
+              <label for="lastname" class="form-label">Last name</label>
+              <input type="text" name="lastname" class="form-control" required id="lastname" placeholder="Enter last name" />
+            </div>
+
+            <!-- Email -->
+            <div class="col-12">
+              <label for="email" class="form-label">Email address</label>
+              <input type="text" name="email" class="form-control" required id="email" placeholder="example@example.com" />
+            </div>
+
+            <!-- message -->
+            <div class="col-12">
+              <div class="form-floating">
+                <textarea required class="form-control" name="message" placeholder="Message" id="message" style="height: 100px"></textarea>
+                <label for="message">Message</label>
+              </div>
+            </div>
+            <div class="col-12">
+              <button type="submit" class="btn btn-primary w-100">Sign in</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
