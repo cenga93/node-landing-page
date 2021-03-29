@@ -29,7 +29,5 @@
     - responsive form :heavy_check_mark:<br>
 
 13. Add footer :heavy_check_mark:<br>
-14. Add controller
-15. rebuild "bad" code
-16. add social icons (links)
-17. add "color" mixin for styling social icons
+14. Add router :heavy_check_mark:<br>
+15. Add controller :heavy_check_mark:<br>

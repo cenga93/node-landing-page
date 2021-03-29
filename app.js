@@ -1,16 +1,12 @@
 const express = require('express');
 const dotenv = require('dotenv');
 const expressLayouts = require('express-ejs-layouts');
-const mongoose = require('mongoose');
 const path = require('path');
 const morgan = require('morgan');
 const connection = require('./src/database/connection');
-const Message = require('./src/models/message');
 const app = express();
 const PORT = process.env.PORT || 3000;
-// ********************************************
-
-// ********************************************
+const defaultRouter = require('./src/router/default');
 
 // path
 const __public = path.join(__dirname, 'public');
@@ -46,35 +42,7 @@ app.use('/svg', express.static(path.join(__public, '/www/svg')));
 app.use('/img', express.static(path.join(__public, '/img')));
 
 // load routes
-app.get('/', (req, res) => {
-  res.render('pages/home');
-});
-
-app.get('/contact', (req, res) => {
-  res.render('pages/contact');
-});
-
-app.post('/contact', (req, res) => {
-  const { firstname, lastname, email, message } = req.body;
-  const newMessage = new Message({
-    _id: new mongoose.Types.ObjectId(),
-    firstname,
-    lastname,
-    email,
-    message,
-  });
-
-  newMessage
-    .save()
-    .then((result) => {
-      console.log(result);
-      res.status(201).redirect('/');
-    })
-    .catch((err) => {
-      console.log(err);
-      res.status(500).json({ error: err });
-    });
-});
+app.use(defaultRouter);
 
 // start server
 app.listen(PORT, () => console.log(`Listening on port: http://localhost:${PORT}`));

@@ -37,6 +37,9 @@
   @if $filename == 4 {
       $char: "\E004";
   }
+  @if $filename == chevron-up-solid {
+      $char: "\E005";
+  }
 
   @return $char;
 } 
@@ -65,4 +68,8 @@
 
 .icon-4 {
   @include icon(4);
+}
+
+.icon-chevron-up-solid {
+  @include icon(chevron-up-solid);
 }

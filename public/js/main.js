@@ -1,1 +1,1 @@
-"use strict";var a="Asdasdasd";
+"use strict";var backToTopButton=document.querySelector(".backToTop");function checkPosition(){window.scrollY<=600?backToTopButton.classList.add("hidden"):(backToTopButton.classList.remove("hidden"),backToTopButton.addEventListener("click",function(){document.documentElement.scrollTop=0}))}window.addEventListener("scroll",checkPosition);

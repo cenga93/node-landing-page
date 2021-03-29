@@ -1,3 +1,23 @@
 body {
+  position: relative;
   font-family: 'Lato';
+
+  .backToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: $red;
+    color: $white;
+    border-radius: 50px;
+
+    &:hover {
+      transform: rotate(360deg) !important;
+      transition: 0.3s !important;
+      color: $white;
+    }
+
+    &.hidden {
+      display: none !important;
+    }
+  }
 }

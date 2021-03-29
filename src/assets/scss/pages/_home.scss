@@ -1,8 +1,9 @@
 // start::HERO, ABOUT SECTION
 .hero,
 .about,
-.services {
-  padding: 0.7rem;
+.services,
+.contact {
+  padding: 2rem;
 }
 
 .hero,
@@ -58,3 +59,11 @@
   }
 }
 // end::SERVICE SECTION
+
+// start::CONTACT SECTION
+.contact {
+  &__button {
+    @include button;
+  }
+}
+// end::CONTACT SECTION
